@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/css.css">
+    <style>
+        body .shell-main-nav ul .nav-box {
+            left: 480px;
+        }
+        :root {
+            --bgColor: white;
+            --inputColor: black;
+            --outlineColor: rgb(141, 228, 41);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        
+        body .shell-main-footer{
+            position: absolute;
+            bottom: 100px;
+        }
+        body .shell{
+            height: 110vh;
+            position: relative
+        }
+        body .shell-main-footer{
+            height: 70px;
+        }
+
+        body{
+            /* 设置背景渐变 */
+            background-image: linear-gradient(to left,
+            #a2eafa,#bcd3ff);
+            display: flex;
+            justify-content: center;
+        }
+        .a{
+            position:relative;
+            top: -150px;
+            width: 1100px;
+            height: 500px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.8);
+            display: flex;
+        }
+        .b{
+            width: 800px;
+            height: 550px;
+            background-image: url("./image/guoqi.jpg");
+            /* 让图片适应大小 */
+            background-size: cover;
+        }
+        .c{
+            width: 300px;
+            height: 550px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .d{
+            width: 250px;
+            height: 500px;
+        }
+        .d h1{
+            font: 900 30px '';
+        }
+        .e{
+            width: 230px;
+            margin: 20px 0;
+            outline: none;
+            border: 0;
+            padding: 10px;
+            border-bottom: 3px solid rgb(80,80,170);
+            font: 900 16px '';
+        }
+        .f{
+            float: right;
+            margin: 10px 0;
+        }
+        .g{
+            position: absolute;
+            margin: 20px;
+            bottom: 40px;
+            display: block;
+            width: 200px;
+            height: 60px;
+            font: 900 30px '';
+            text-decoration: none;
+            line-height: 50px;
+            border-radius: 30px;
+            background-image: linear-gradient(to left,
+            #a2eafa,#bcd3ff);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shell">
+        <div class="shell-main">
+            <div class="shell-main-nav">
+                <div class="logo">
+                    <img src="./image/siyulogo.jpg" alt="">
+                    <span>都莲小学の家</span>
+                </div>
+                <ul>
+                    <li><a href="./index.html">主页</a></li>
+                    <li><a href="./xiaoyuanfengjing.html">乡村风景</a></li>
+                    <li><a href="./chengyuanjieshao.html">成员介绍</a></li>
+                    <li><a href="./shijianzhou.html" target="_blank">时间轴</a></li>
+                    <li><a href="./Login.html">登录</a></li>
+                    <div class="nav-box"></div>
+                </ul>
+            </div>
+        </div>
+        
+
+        <div class="a">
+            <div class="b"></div>
+            <div class="c">
+                <div class="d">
+                    <h1>登录/注册</h1>
+                    <input type="text" class="e" placeholder="请输入用户名">
+                    <input type="text" class="e" placeholder="请输入账号">
+                    <input type="password" class="e" placeholder="请输入密码">
+                    <a href="#" class="f">忘记密码?</a>
+                    <a href="#" class="g">登录</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="shell-main-footer">
+            <span>版权所有-岭南星语、红浪支教团</span>
+        </div>
+    </div>
+    <script>
+        const root = document.documentElement;
+        const eye = document.getElementById('eyeball');
+        const beam = document.getElementById('beam');
+        const passwordInput = document.getElementById('password');
+        const footer = document.querySelector('.shell-main-footer')
+
+        root.addEventListener('mousemove', (e) => {
+            let rect = beam.getBoundingClientRect();
+            let mouseX = rect.right + (rect.width / 2);
+            let mouseY = rect.top + (rect.height / 2);
+            let rad = Math.atan2(mouseX - e.pageX, mouseY - e.pageY);
+            let degrees = (rad * (20 / Math.PI) * -1) - 350;
+            root.style.setProperty('--beamDegrees', `${degrees}deg`);
+        });
+
+        eye.addEventListener('click', e => {
+            e.preventDefault();
+            document.body.classList.toggle('show-password');
+            passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password'
+            passwordInput.focus();
+            
+        });
+    </script>
+</body>
+
+</html>

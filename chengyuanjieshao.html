@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成员介绍</title>
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <style>
+        body{
+            background-color: #a1e6ff;
+        }
+        body .shell-main-nav ul .nav-box {
+            left: 240px;
+            
+        }
+
+        body .shell-main {
+            margin-bottom: 0;
+
+        }
+
+        body .shell-main-nav {
+            margin-bottom: 0;
+        }
+
+
+        body .shell-main-footer{
+            margin-top: -70px;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .boxsall {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #a1e6ff;
+            
+        }
+        .boxall {
+             
+            position: relative;
+            min-width: 1000px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            /* 设置3d变化 */
+            transform-style:preserve-3d;
+            /* 添加透视效果 */
+            perspective: 900px;
+            
+            
+        }
+        
+    
+
+        .boxall  .box{
+            position: relative;
+            width: 250px;
+            height: 350px;
+            transition: .3s;
+            overflow: hidden;
+            margin: 30px;
+            margin-top: 80px;
+            transform: rotateY(0);
+            transition-delay: .1s;
+            border-radius: 5px;
+            border: #fff 5px solid;
+        }
+        .boxall  .box .images img{
+            width: 100%;
+        }
+        .boxall:hover .box{
+            transform: rotateY(40deg);
+        }
+        .boxall  .box:hover{
+            transform: rotateY(0deg) scale(1.25);
+            box-shadow: 0 25px 40px rgba(0, 0, 0, .7);
+            z-index: 1;
+        }
+        .boxall  .box:hover~.box{
+            transform: rotateY(-40deg);
+        }
+        .boxall  .box .content{
+            position: absolute;
+            top: 0;
+            width: 90%;
+            height: 100%;
+            z-index: 999;
+            padding: 15px;
+        }
+        .boxall  .box .content h2{
+            color: rgb(210, 140, 140);
+            transition: .3s;
+            font-size: 20px;
+            transform: translateY(-100px);
+        }
+        .boxall  .box:hover .content h2{
+            transform: translateY(-15px);
+        }
+        .boxall  .box .content p{
+            color: #000;
+            transition: .3s;
+            font-size: 14px;
+            transform: translateY(600px);
+            background-color: rgba(255, 255, 255,.7);
+        }
+        .boxall  .box:hover .content p{
+            transform: translateY(225px);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="shell">
+        <div class="shell-main">
+            <div class="shell-main-nav">
+                <div class="logo">
+                    <img src="./image/siyulogo.jpg" alt="">
+                    <span>都莲小学の家</span>
+                </div>
+                <ul>
+                    <li><a href="./index.html">首页</a></li>
+                    <li><a href="./xiaoyuanfengjing.html">乡村风景</a></li>
+                    <li><a href="./chengyuanjieshao.html">成员介绍</a></li>
+                    <li><a href="./shijianzhou.html" target="_blank">时间轴</a></li>
+                    <li><a href="./Login.html">登录</a></li>
+                    <div class="nav-box"></div>
+                </ul>
+            </div>
+        </div>
+       
+
+<div class="boxsall">
+    <div class="boxall">
+       
+
+
+
+        <div class="box">
+            <div class="images">
+                <img src="./image/cwy2.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>曹文阳</h2>
+                <p>流水不争先，争的是滔滔不绝。我是来自陕西的曹文阳同学，专业是思想政治教育，愿意将所学知识带给孩子们，共同筑起阳光灿烂的成长之路。
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="images">
+                <img src="./image/cy1.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>陈渝</h2>
+                <p>踔厉奋发，笃行不怠。大家好，我是来自广东的陈渝，担任本次支教的安全教育老师。希望在这次支教中与孩子们共同成长、并肩前行！
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="images">
+                <img src="./image/cs.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>陈顺</h2>
+                <p>大家好，我是来自贵州铜仁的陈顺。担任本次美食和瓶子彩绘的老师。很高兴能成为你们的指导老师，我们一起学习探索新天地。
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="images">
+                <img src="./image/gdw.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>耿大伟</h2>
+                <p>我叫耿大伟，来自贵州师范大学，担任本次支教的计算机老师，我相信技术的力量可以改变世界。期待与孩子们共同学习和成长的机会。
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="images">
+                <img src="./image/cyy.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>谌悦</h2>
+                <p>大家好，我叫谌悦，来自四川，美术专业。性格温和，有亲和力。所教授课程是绘画，希望我们能更好陪伴孩子们健康成长，构建孩子金色童年
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="images">
+                <img src="./image/qjj.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>覃晶晶</h2>
+                <p>覃晶晶，来自广西来宾市兴宾区，22岁，就读于广西民族大学相思湖学校，支教授课内容石子彩绘，传统技艺
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="images">
+                <img src="./image/cjh.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>陈建豪</h2>
+                <p>大家好，我是来自贵州的陈建豪，担任本次支教的体育与健康的老师。希望在这次实践中与大家一同进步，大家开开心心的度过这一段欢快的时间
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="images">
+                <img src="./image/zgb.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>张贵斌</h2>
+                <p>
+                    大家好，我是来自来自贵州铜仁的张贵斌，担任本次的数学故事的老师。希望在今后的工作与生活中，能跟孩子们一起进步一起玩耍。
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="images">
+                <img src="./image/wll.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>王璐璐</h2>
+                <p>用爱传递希望~我是来自江苏无锡的王璐璐，汉语言文学专业，负责教授外国文学赏析和折纸课，希望和小朋友一起度过一个充实快乐的假期~
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="images">
+                <img src="./image/ohl.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>欧虹莲</h2>
+                <p>欧虹莲，授本次支教的阅读与民俗课程。弟子不必不如师，师不必贤于弟子。
+                </p>
+            </div>
+        </div>
+ 
+
+
+
+        <div class="box">
+            <div class="images">
+                <img src="./image/xx.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>徐霞</h2>
+                <p>我叫徐霞，来自渤海大学外国语学院，本人学习师范专业，在教学活动中可以和小朋友相处融洽，帮助他们提升自己，建立自信。
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="images">
+                <img src="./image/zzy.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>张之杨</h2>
+                <p>大家好！我叫张之杨，来自贵州毕节，担任小队队长，希望此次支教活动能够圆满进行，能给孩子们带来阳光，也希望我们都能有所得有所获。
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="images">
+                <img src="./image/lsy.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>李书阳</h2>
+                <p>大家好，我叫李书阳，来自辽宁鞍山。很荣幸能参与到本次支教活动并担任演讲朗诵课程老师。希望能和大家一起为孩子们贡献一份力量。
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="images">
+                <img src="./image/wyt.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>王艺婷</h2>
+                <p>各位家长大家好，我是来自辽宁省丹东市的王艺婷，担任食品安全和食品知识科普老师，希望在接下来的支教活动中能够帮助更多的孩子们。
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="images">
+                <img src="./image/wmx.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>万孟炫</h2>
+                <p>大家好，我是信息科学与技术学院的万孟炫，我来自贵州毕节。担任本次支教绘画课程的老师。希望这次经历能带给孩子们无限的快乐。
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="images">
+                <img src="./image/sjy.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>宋佳音</h2>
+                <p>大家好，我是来自新疆伊犁的宋佳音，很开心能够参与此次广西来宾的的支教，担任本次支教的普通话和折纸课程的老师。
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="images">
+                <img src="./image/lzx.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>刘芷瑄</h2>
+                <p>大家好！我是刘芷瑄，来自渤海大学马克思主义学院。我会给小朋友们带来更多丰富的课外知识，例如朗诵、花样跳绳、字母歌等。
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="images">
+                <img src="./image/lxy.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>李新月</h2>
+                <p>大家好！我是李新月，来自辽宁。平时喜欢唱歌，担任此次支教的安全知识老师和歌唱老师。希望在本次支教中能为乡村孩子们带来快乐。
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="images">
+                <img src="./image/zmj.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>周明俊</h2>
+                <p>大家好，我是数学科学学院的周明俊，来自贵州省兴仁市。担任此次支教的数学老师。亲爱的孩子们，我来了！
+                </p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="images">
+                <img src="./image/zsy.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>张斯羽</h2>
+                <p>大家好，我是张斯羽，来自外国语学院。担任本次支教的手语舞蹈老师和趣味英语老师。希望能在此次社会实践中为山区里的孩子带去知识。
+                </p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="images">
+                <img src="./image/sbj.jpg" alt="">
+            </div>
+            <div class="content">
+                <h2>石博嘉</h2>
+                <p>大家好，我是来自河北的石博嘉，担任本次支教的自然科普老师。希望在这次实践中与大家一同进步，为孩子们带来知识与快乐。
+                </p>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+        <div class="shell-main-footer">
+            <span>版权所有-岭南星语、红浪支教团</span>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我们の时光</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .shell {
+            width: 100%;
+            position: relative;
+            padding: 80px 0;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .shell:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(99, 99, 99, 0.8);
+            content: "";
+        }
+
+        .header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .title {
+            color: #fff;
+            font-size: 46px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .timeline {
+            display: flex;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            flex-direction: column;
+            max-width: 700px;
+            position: relative;
+        }
+
+        .content-title {
+            font-weight: normal;
+            font-size: 66px;
+            margin: -10px 0 0 0;
+            transition: 0.4s;
+            padding: 0 10px;
+            box-sizing: border-box;
+            color: #fff;
+        }
+
+        .content-desc {
+            margin: 0;
+            font-size: 15px;
+            box-sizing: border-box;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 25px;
+        }
+
+        .timeline:before {
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            margin-left: -1px;
+            content: "";
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .item {
+            padding: 40px 0;
+            opacity: 0.3;
+            filter: blur(2px);
+            transition: 0.5s;
+            box-sizing: border-box;
+            width: calc(50% - 40px);
+            display: flex;
+            position: relative;
+            transform: translateY(-80px);
+        }
+
+        .item:before {
+            /* 设置在伪元素before中的内容  */
+            content: attr(data-text);
+            letter-spacing: 3px;
+            width: 100%;
+            position: absolute;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 13px;
+            border-left: 2px solid rgba(255, 255, 255, 0.5);
+            top: 70%;
+            margin-top: -5px;
+            padding-left: 15px;
+            opacity: 0;
+            right: calc(-100% - 56px);
+            font: 900 20px '';
+            letter-spacing: 5px;
+        }
+
+        .item:nth-child(even) {
+            align-self: flex-end;
+        }
+
+        .item:nth-child(even):before {
+            right: auto;
+            text-align: right;
+            left: calc(-100% - 56px);
+            padding-left: 0;
+            border-left: none;
+            border-right: 2px solid rgba(255, 255, 255, 0.5);
+            padding-right: 15px;
+        }
+
+        .item--active {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0px);
+        }
+
+        .item--active:before {
+            top: 50%;
+            transition: 0.3s all 0.2s;
+            opacity: 1;
+        }
+
+        .item--active .content-title {
+            margin: -50px 0 20px 0;
+        }
+
+        .img {
+            max-width: 100%;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+            letter-spacing: 5px;
+            margin: 10px 0 0 0;
+            font-weight: normal;
+        }
+
+        .footer {
+            padding: 95px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #999;
+            display: inline-block;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .item {
+                align-self: baseline !important;
+                width: 100%;
+                padding: 0 30px 150px 80px;
+            }
+
+            .item:before {
+                left: 10px !important;
+                padding: 0 !important;
+                top: 50px;
+                text-align: center !important;
+                width: 60px;
+                border: none !important;
+            }
+
+            .item:last-child {
+                padding-bottom: 40px;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .timeline:before {
+                left: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="shell" id="shell">
+        <div class="header">
+            <h2 class="title">都莲の时光</h2>
+            <h3 class="subtitle">星语❥(^_-)红浪</h3>
+        </div>
+        <div class="timeline">
+
+
+            <div class="item" data-text="《来宾市志愿者协会》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/011.jpg" />
+                    <h2 class="content-title">01</h2>
+                    <p class="content-desc">
+                        先去协会拿快递，明天就要到都莲小学啦，张会长对我们临行前的嘱咐。哈哈哈很期待第二天的行程。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《未来星午托机构》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/013.jpg" />
+                    <h2 class="content-title">02</h2>
+                    <p class="content-desc">
+                        来宾市的第一晚，硬板床，觉得睡得还是挺难受的，不过比起支教的住宿条件真的很不错了。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《来宾市客车站》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/012.jpg" />
+                    <h2 class="content-title">03</h2>
+                    <p class="content-desc">
+                        出发，都莲小学！！
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《都莲小学》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/014.jpg" />
+                    <h2 class="content-title">04</h2>
+                    <p class="content-desc">
+                        到啦~太阳真的好晒，支教生活正式开始！
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《住宿环境》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/015.jpg" />
+                    <h2 class="content-title">05</h2>
+                    <p class="content-desc">
+                        住宿环境不用说，课桌摆的，睡起来杠杠的。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《第一顿饭》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/016.jpg" />
+                    <h2 class="content-title">06</h2>
+                    <p class="content-desc">
+                        在都莲小学的第一顿饭，去的太晚，只剩下炒粉了。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《招生》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/017.jpg" />
+                    <h2 class="content-title">07</h2>
+                    <p class="content-desc">
+                        夏令营开始招生啦，去村里面挨家挨户登门拜访。有点像传销组织嘿嘿。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《都莲村村委》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/018.jpg" />
+                    <h2 class="content-title">08</h2>
+                    <p class="content-desc">
+                        很感谢村委帮我们宣传，节省了我们很多时间，避免了好多麻烦。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《一茶四季》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/019.jpg" />
+                    <h2 class="content-title">09</h2>
+                    <p class="content-desc">
+                        碰到了小朋友，一定要把他招到我们夏令营来。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《绘画课》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/020.jpg" />
+                    <h2 class="content-title">10</h2>
+                    <p class="content-desc">
+                        悦姐的绘画课，看得出来大家的兴致都好高哦。
+                    </p>
+                </div>
+            </div>
+
+
+            <!--  -->
+            <div class="item" data-text="《美食课》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/021.jpg" />
+                    <h2 class="content-title">11</h2>
+                    <p class="content-desc">
+                        顺哥的美食课，表示很想吃这个包子。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《包包子成功啦》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/022.jpg" />
+                    <h2 class="content-title">12</h2>
+                    <p class="content-desc">
+                        自己包出来的包子，一定会很开心啦。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《早操》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/023.jpg" />
+                    <h2 class="content-title">13</h2>
+                    <p class="content-desc">
+                        一天的精神面貌在早上，看的出来大家的精神状态非常棒（忽略图片的表情）
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《国学课》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/024.jpg" />
+                    <h2 class="content-title">14</h2>
+                    <p class="content-desc">
+                        之杨的国学课，绘声绘色。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《编程课》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/025.jpg" />
+                    <h2 class="content-title">15</h2>
+                    <p class="content-desc">
+                        编程课，没有机房，只能用抠图的方式来学习啦。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《石子彩绘》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/026.jpg" />
+                    <h2 class="content-title">16</h2>
+                    <p class="content-desc">
+                        晶晶的彩绘课，发散想象力，很考验耐心。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《佳音》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/027.jpg" />
+                    <h2 class="content-title">17</h2>
+                    <p class="content-desc">
+                        佳音真的太温柔了，小朋友也很喜欢她哦~
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《体育课》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/028.jpg" />
+                    <h2 class="content-title">18</h2>
+                    <p class="content-desc">
+                        课前准备活动，真怀念哦。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《课间》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/029.jpg" />
+                    <h2 class="content-title">19</h2>
+                    <p class="content-desc">
+                        大课间，终于有了自己玩耍的时间了嘿嘿。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《作业辅导》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/030.jpg" />
+                    <h2 class="content-title">20</h2>
+                    <p class="content-desc">
+                        鱼姐辅导作文，很有耐心，学生也很听话。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《语文课》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/031.jpg" />
+                    <h2 class="content-title">21</h2>
+                    <p class="content-desc">
+                        芷瑄不要太优秀，表示不知道这首诗的题目。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《数学文化》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/032.jpg" />
+                    <h2 class="content-title">22</h2>
+                    <p class="content-desc">
+                        贵斌的课总是那么有意思。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《折纸课》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/033.jpg" />
+                    <h2 class="content-title">23</h2>
+                    <p class="content-desc">
+                        璐璐的折纸课，助教老师们认真辅导。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《聚会》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/034.jpg" />
+                    <h2 class="content-title">24</h2>
+                    <p class="content-desc">
+                        聚会还是要浅浅拍张照吧。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《团建》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/035.jpg" />
+                    <h2 class="content-title">25</h2>
+                    <p class="content-desc">
+                        相处了这么久，我们终于迎来了团建。晚上的来宾依然很热，不过我们的热情才是最燃的。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《小广场》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/036.jpg" />
+                    <h2 class="content-title">26</h2>
+                    <p class="content-desc">
+                        村里面的小公园，露天篮球场，跷跷板，秋千，滑梯。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《运动会》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/037.jpg" />
+                    <h2 class="content-title">27</h2>
+                    <p class="content-desc">
+                        跑得太快啦，相机都已经抓不到你们的身影了。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《运动会》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/038.jpg" />
+                    <h2 class="content-title">28</h2>
+                    <p class="content-desc">
+                        只能说四位真的都超可爱~~
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《运动会》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/039.jpg" />
+                    <h2 class="content-title">29</h2>
+                    <p class="content-desc">
+                       两人三足，如果是我一定会摔跤的。同学们都好厉害。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《备课》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/040.jpg" />
+                    <h2 class="content-title">30</h2>
+                    <p class="content-desc">
+                       老师们都认真备课，斯羽和芷瑄认真探讨如何让农民阶级脱贫致富。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《霞姐和海瑞》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/041.jpg" />
+                    <h2 class="content-title">31</h2>
+                    <p class="content-desc">
+                       霞姐和海瑞，可可爱爱！
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《海誓山盟》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/042.jpg" />
+                    <h2 class="content-title">32</h2>
+                    <p class="content-desc">
+                      月老的红线是斩不断的。爱情也可以超越性别的隔阂！！！
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《摄影师也有了照片》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/043.jpg" />
+                    <h2 class="content-title">33</h2>
+                    <p class="content-desc">
+                       大伟终于有了自己的照片~
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《艺婷》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/044.jpg" />
+                    <h2 class="content-title">34</h2>
+                    <p class="content-desc">
+                       艺婷老师的课，气氛很好，非常有趣哦。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《鱼姐奥特曼》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/045.jpg" />
+                    <h2 class="content-title">35</h2>
+                    <p class="content-desc">
+                       鱼姐正在培训奥特曼新生，现在鱼姐正在给学生们展示如何发射激光。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《新月》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/046.jpg" />
+                    <h2 class="content-title">36</h2>
+                    <p class="content-desc">
+                       新月姐真的好慈祥，学生们一定喜欢她的课。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《夜宵》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/047.jpg" />
+                    <h2 class="content-title">37</h2>
+                    <p class="content-desc">
+                       明俊准备的火锅，非常nice。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《证书》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/048.jpg" />
+                    <h2 class="content-title">38</h2>
+                    <p class="content-desc">
+                       结营仪式，拿到奖状一定很开心吧。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《抢凳子》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/049.jpg" />
+                    <h2 class="content-title">39</h2>
+                    <p class="content-desc">
+                       抢凳子主打一个眼疾手快。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《挖石头》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/050.jpg" />
+                    <h2 class="content-title">40</h2>
+                    <p class="content-desc">
+                       河边的风景很美，水很凉。
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="item" data-text="《纸飞机》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/051.jpg" />
+                    <h2 class="content-title">41</h2>
+                    <p class="content-desc">
+                       运动会纸飞机比赛，放飞梦想。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《书阳》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/052.jpg" />
+                    <h2 class="content-title">42</h2>
+                    <p class="content-desc">
+                       班主任的谆谆教导哈哈哈哈
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《心理健康课》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/053.jpg" />
+                    <h2 class="content-title">43</h2>
+                    <p class="content-desc">
+                       学生可能不会很理解，但文阳真的讲的很卖力。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《老鹰捉小鸡》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/054.jpg" />
+                    <h2 class="content-title">44</h2>
+                    <p class="content-desc">
+                       老鹰捉小鸡，佳音和同学们课下互动，很暖。
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="item" data-text="《都莲地头蛇》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/055.jpg" />
+                    <h2 class="content-title">45</h2>
+                    <p class="content-desc">
+                       以后在都莲，见到我鱼姐，低下头做人。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《很难评》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/056.jpg" />
+                    <h2 class="content-title">46</h2>
+                    <p class="content-desc">
+                       我只能说隔行如隔山，祝他成功吧。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《美食》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/057.jpg" />
+                    <h2 class="content-title">47</h2>
+                    <p class="content-desc">
+                       自从来了顺哥，伙食变得越来越好了。
+                    </p>
+                </div>
+            </div>
+
+            <div class="item" data-text="《结营》">
+                <div class="content">
+                    <img class="img" src="./image/shijianzhouimg/058.jpg" />
+                    <h2 class="content-title">48</h2>
+                    <p class="content-desc">
+                       21天的活动正式结束啦~~~
+                    </p>
+                </div>
+            </div>
+        </div>
+    <!-- </div>
+    <div class="footer"><a>页脚</a>
+    </div> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        (function ($) {
+            $.fn.timeline = function () {
+                var selectors = {
+                    id: $(this),
+                    item: $(this).find(".item"),
+                    activeClass: "item--active",
+                    img: ".img"
+                };
+                // 将第一个时间轴项目激活，并设置时间轴背景图片为第一个项目的图片
+                selectors.item.eq(0).addClass(selectors.activeClass);
+                selectors.id.css(
+                    "background-image",
+                    "url(" +
+                    selectors.item
+                        .first()
+                        .find(selectors.img)
+                        .attr("src") +
+                    ")"
+                );
+                // 获取时间轴项目的总数
+                var itemLength = selectors.item.length;
+                // 当页面滚动时，触发滚动事件
+                $(window).scroll(function () {
+                    var max, min;
+                    // 获取页面滚动的距离
+                    var pos = $(this).scrollTop();
+                    selectors.item.each(function (i) {
+                        // 获取当前时间轴项目的最小和最大高度
+                        min = $(this).offset().top;
+                        max = $(this).height() + $(this).offset().top;
+                        var that = $(this);
+                        // 如果滚动到最后一个项目，并且超过了当前项目高度的一半，
+                        // 则将最后一个项目设置为激活状态，并设置背景图片为最后一个项目的图片
+                        if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+                            selectors.item.removeClass(selectors.activeClass);
+                            selectors.id.css(
+                                "background-image",
+                                "url(" +
+                                selectors.item
+                                    .last()
+                                    .find(selectors.img)
+                                    .attr("src") +
+                                ")"
+                            );
+                            selectors.item.last().addClass(selectors.activeClass);
+                        }
+                        // 如果当前滚动位置在当前项目的最小和最大高度之间，
+                        // 则将当前项目设置为激活状态，并设置背景图片为当前项目的图片
+                        else if (pos <= max - 10 && pos >= min) {
+                            selectors.id.css(
+                                "background-image",
+                                "url(" +
+                                $(this)
+                                    .find(selectors.img)
+                                    .attr("src") +
+                                ")"
+                            );
+                            selectors.item.removeClass(selectors.activeClass);
+                            $(this).addClass(selectors.activeClass);
+                        }
+                    });
+                });
+            };
+        })(jQuery)
+        /*
+        最后，我们调用 timeline 插件并传入时间轴的 ID 作为参数。
+        这将启用时间轴插件并为该时间轴绑定滚动事件。
+        */
+        $("#shell").timeline();
+    </script>
+</body>
+
+</html>
